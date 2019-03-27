@@ -6,39 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Lista Tareas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/estilo.css">
     <script src="main.js"></script>
 </head>
 
 <body>
-    <script language="javascript">
-        function mostrar() {
-            var reg_1 = document.getElementById("reg_1");
-            var reg_2 = document.getElementById("reg_2");
-            var reg_3 = document.getElementById("reg_3");
+    <header>
+        <h1 align="center" style="padding-top: 30px; padding-bottom: 20px;">¡Organiza Tus Trabajos!</h1>
+    </header>
+    
+    
+    <nav class="navegacion">
+        <ul class="menu">
+            <li><a href="/">Agregar</a></li>
+            <li><a href="/tareas" >Lista de Trabajos</a></li>
+        </ul>
+    </nav>
+    <hr/>
+    <br/>
+    <br/>
+    <br/>
+    <section>
+    <table id="tabla" nombre="tabla" border="border: red 5px inset" style="margin: 0 auto;">
+       <thead>
+          <tr>
+             <th>Tarea</th>
+             <th>Materia</th>
+             <th>Fecha</th>
+             <th>Descripcion</th>
+          </tr>
+       </thead>
 
-            document.write(
-                "<table cellpadding='5' cellspacing='0' border='1'>" +
-                "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
-                "<tr><td>" + reg_1.value + "</td><td>" + reg_2.value + "</td><td>" + reg_3.value + "</td></tr></table>"
-            );
-        }
-    </script>
-    <form>
-        document.write( "
-        <table cellpadding='5' cellspacing='0' border='1'>" + "
-            <tr>
-                <td>Registro 1</td>
-                <td>Registro 2</td>
-                <td>Registro 3</td>
-            </tr>" + "
-            <tr>
-                <td>" + nombre.value + "</td>
-                <td>" + materia.value + "</td>
-                <td>" + descripcion.value + "</td>
-            </tr>
-        </table>" );
-    </form>
-</body>
+       <tbody>
+          {% for Tarea in Tareas %}
+             <tr>
+                <td>{{ Tarea.nombre_tarea }}</td>
+                <td>{{ Tarea.nombre_materia }}</td>
+                <td>{{ Tarea.fecha_tarea }}</td>
+                <td>{{ Tarea.descripcion_tarea }}</td>
+             </tr>
+          {% endfor %}
+       </tbody>
+    </table>
+</section>
+<footer>
+
+    <p style="text-align: right; padding-right: 60px; padding-top: 350px; padding-bottom: 20px"><strong>2019</strong></p>
+</footer>
+ </body>
 
 </html>

@@ -1,3 +1,4 @@
+from dodotable.schema import Table, Column
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
@@ -14,7 +15,7 @@ db = SQLAlchemy(app)
 
 class Tareas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    nombre_tarea = db.Column(db.String(100), unique = True, nullable = False)
+    nombre_tarea = db.Column(db.String(100), nullable = False)
     nombre_materia = db.Column(db.String(100), nullable = False)
     fecha_tarea = db.Column(db.String(100), nullable = False)
     descripcion_tarea = db.Column(db.String(250), nullable = False)
@@ -27,10 +28,13 @@ def index():
         db.session.add(new_tarea)
         db.session.commit()
 
-        return "Se registró"
-
     return render_template('tareas.html')
 
-if __name__ == "__main__":
-    db.create_all()
-    app.run(debug=True)
+@app.route('/tareas')
+def print_items(): 
+    return render_template('historial.html', Tareas = Tareas.query.all() )
+
+    
+
+db.create_all()
+app.run(debug=True)

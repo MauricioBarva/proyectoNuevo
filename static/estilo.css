@@ -82,3 +82,12 @@ h1 {
     height: 30px;
     text-align: center;
 }
+
+#tabla{
+    width: 80%;
+    
+}
+
+#tabla, th{
+    text-align: center;
+}
