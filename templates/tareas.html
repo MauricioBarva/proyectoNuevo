@@ -12,20 +12,19 @@
 
 <body>
 
-        <script language="javascript">
-                function mostrar()
-                {
-                    var reg_1=document.getElementById("nombre ");
-                    var reg_2=document.getElementById("materia");
-                    var reg_3=document.getElementById("descripcion");
-                
-                    document.write(
-                    "<table cellpadding='5' cellspacing='0' border='1'>" +
-                    "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>"+
-                    "<tr><td>"+reg_1.value+"</td><td>"+reg_2.value+"</td><td>"+reg_3.value+"</td></tr></table>"
-                    );
-                }
-                </script>
+    <script language="javascript">
+        function mostrar() {
+            var reg_1 = document.getElementById("nombre");
+            var reg_2 = document.getElementById("materia");
+            var reg_3 = document.getElementById("descripcion");
+
+            document.write(
+                "<table cellpadding='5' cellspacing='0' border='1'>" +
+                "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
+                "<tr><td>" + reg_1.value + "</td><td>" + reg_2.value + "</td><td>" + reg_3.value + "</td></tr></table>"
+            );
+        }
+    </script>
     <header>
         <h1 align="center">¡Organiza Tus Trabajos!</h1>
     </header>
@@ -35,13 +34,13 @@
             <li><a href="http://127.0.0.1:5000/lista">Todos los Trabajos</a></li>
         </ul>
     </nav>
-    <hr/>
+    <hr />
 
-    <br/>
+    <br />
     <section>
 
         <h4 id="obligatorio" style="color: red;text-align: center">(*) Obligatorio</h4>
-        <br/>
+        <br />
         <form action="" method="post">
 
             <table style="margin: 0 auto ">
@@ -52,19 +51,21 @@
                     <tr>
                         <th colspan="3">
 
-                            <label for="nombre ">Nombre <span style="color:red">*</span>  </label>
+                            <label for="nombre ">Nombre <span style="color:red">*</span> </label>
                         </th>
 
                         <td colspan="2">
-                            <input type="text " id="nombre " name="nombre" placeholder="Ingrese Nombre Trabajo " required />
+                            <input type="text " id="nombre" name="nombre" placeholder="Ingrese Nombre Trabajo "
+                                required />
                         </td>
 
                         <th colspan="2 ">
-                            <label for="materia ">Materia <span style="color:red">*</span></label>
+                            <label for="materia">Materia <span style="color:red">*</span></label>
                         </th>
 
                         <td>
-                            <input type="text " id="materia" name="materia " placeholder="Ingrese Nombre Materia " required />
+                            <input type="text " id="materia" name="materia" placeholder="Ingrese Nombre Materia "
+                                required />
                         </td>
                     </tr>
 
@@ -72,22 +73,22 @@
                         <th colspan="2 ">
 
 
-                            <td>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </td>
+                        <td>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </td>
 
-                            <th colspan="2 ">
-                                <label for="fecha ">Fecha Entrega <span style="color:red">*</span></label>
-                            </th>
+                        <th colspan="2 ">
+                            <label for="fecha ">Fecha Entrega <span style="color:red">*</span></label>
+                        </th>
 
-                            <td>
-                                <input type="date" name="fecha" id="fecha" value="" required>
-                            </td>
+                        <td>
+                            <input type="date" name="fecha" id="fecha" value="" required>
+                        </td>
                     </tr>
                 </p>
             </table>
@@ -98,7 +99,8 @@
 
                 <tr>
                     <td>
-                        <textarea name="descripcion" id="descripcion" rows="7" cols="50" placeholder="-- Escribe la descripción --"></textarea>
+                        <textarea name="descripcion" id="descripcion" rows="7" cols="50"
+                            placeholder="-- Escribe la descripción --"></textarea>
                     </td>
                 </tr>
             </table>
@@ -108,8 +110,10 @@
                 <tr>
 
                     <td>
-                        <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar" style="height:35px;width: 125px; background-color: #ff3942 " onclick="mostrar()" value="mostrar en tabla"/>
-                        <input type="button" onclick="mostrar()" value="mostrar en tabla"/>
+                        <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar"
+                            style="height:35px;width: 125px; background-color: #ff3942 " onclick="mostrar()"
+                            value="mostrar en tabla" />
+                        <input type="button" onclick="mostrar()" value="mostrar en tabla" />
                     </td>
 
                 </tr>
