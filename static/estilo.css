@@ -48,7 +48,7 @@ body {}
 
 h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #353535;
+    color: #b65252;
 }
 
 
@@ -58,10 +58,27 @@ h1 {
 /*El transition sirve para que la animacion que le di en hover no sea tan brusca, que se demore (0.3) el punto significa 0 segundos en aparecer*/
 
 .menu>li>a:hover {
-    color: whitesmoke;
+    color: rgb(255, 255, 255);
     transition: all .3s;
-    background: rgb(9, 26, 61);
+    background: rgb(12, 30, 66);
 }
 
+#guardar {
+    width: 130px;
+    height: 45px;
+    border: none;
+    background-color: rgb(90, 212, 94);
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto;
+}
 
-/*aqui le digo a todos los li del menu les ponga la animacion del hover al submennu*/
+#materia,
+#nombre,
+#fecha {
+    width: 170px;
+    height: 30px;
+    text-align: center;
+}

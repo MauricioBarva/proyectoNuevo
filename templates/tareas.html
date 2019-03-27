@@ -29,11 +29,11 @@
             }
 
 
-            /*console.log(
+            document.write(
                 "<table cellpadding='5' cellspacing='0' border='1'>" +
                 "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
-                "<tr><td>" + reg_1.value + "</td><td>" + reg_2.value + "</td><td>" + reg_3.value + "</td></tr></table>"
-            );*/
+                "<tr><td>" + nombre.value + "</td><td>" + materia.value + "</td><td>" + descripcion.value + "</td></tr></table>"
+            );
         }
     </script>
     <header>
@@ -41,12 +41,11 @@
     </header>
     <nav class="navegacion">
         <ul class="menu">
-            <li><a href="http://127.0.0.1:5000/">Agregar Trabajo</a></li>
-            <li><a href="http://127.0.0.1:5000/lista">Todos los Trabajos</a></li>
+            <li><a href="http://127.0.0.1:5000/">Agregar</a></li>
+            <li><a href="http://127.0.0.1:5000/lista">Lista de Trabajos</a></li>
         </ul>
     </nav>
-    <hr />
-
+    <hr>
     <br />
     <section>
         <h4 id="obligatorio" style="color: red;text-align: center">(*) Obligatorio</h4>
@@ -61,7 +60,7 @@
                     <tr>
                         <th colspan="3">
 
-                            <label for="nombre ">Nombre <span style="color:red">*</span> </label>
+                            <label style="padding-right: 30px;">Nombre <span style="color:red">*</span> </label>
                         </th>
 
                         <td colspan="2">
@@ -101,7 +100,7 @@
                 </p>
             </table>
             <header>
-                <h4 align="center">Descripción del Trabajo</h4>
+                <h4 align="center" style="padding-bottom: 20px;">Descripción del Trabajo</h4>
             </header>
             <table style="margin: 0 auto">
 
@@ -117,10 +116,11 @@
                 <tr>
 
                     <td>
-                        <input type="button" width="30" height="50" onclick="mostrar()" value="Guardar" />
+
                     </td>
                     <td>
-                        <pre id="whereToPrint"></pre>
+                        <br>
+                        <input type="button" id="guardar" onclick="mostrar()" value="Guardar" />
                     </td>
 
                 </tr>
@@ -129,8 +129,13 @@
 
                 </tr>
             </table>
+
         </form>
     </section>
+    <footer>
+
+        <p style="text-align: right; padding-right: 60px; padding-top: 20px; padding-bottom: 20px"><strong>2019</strong></p>
+    </footer>
 </body>
 
 </html>
