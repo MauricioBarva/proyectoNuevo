@@ -11,23 +11,29 @@
 </head>
 
 <body>
-    <header>
-        <h1 align="center">Detalles Trabajos</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="http://127.0.0.1:5000/">Agregar Trabajo</a></li>
-            <li><a href="http://127.0.0.1:5000/lista">Todos los Trabajos</a></li>
-        </ul>
-    </nav>
-    <hr/>
-    <h1>hola mundo</h1>
-
-    <br/> {% for user in lista %}
-    <h1>Datos del usuario: {{user.id}}</h1>
-    <li>Nombre: {{user.nombre}}</li>
-    <li>Puntos: {{user.puntos}}</li>
-    {% endfor %}
+    <script language="javascript">
+        function mostrar()
+        {
+            var reg_1=document.getElementById("reg_1");
+            var reg_2=document.getElementById("reg_2");
+            var reg_3=document.getElementById("reg_3");
+        
+            document.write(
+            "<table cellpadding='5' cellspacing='0' border='1'>" +
+            "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>"+
+            "<tr><td>"+reg_1.value+"</td><td>"+reg_2.value+"</td><td>"+reg_3.value+"</td></tr></table>"
+            );
+        }
+        </script>
+        <form>
+        Registro 1  
+          <input type="text" id="reg_1"/><br /><br />
+        Registro 2 
+        <input type="text" id="reg_2"/><br /><br />
+        Registro 3 
+        <input type="text" id="reg_3"/><br><br />
+        <input type="button" onclick="mostrar()" value="mostrar en tabla"/>
+        </form> 
 </body>
 
 </html>

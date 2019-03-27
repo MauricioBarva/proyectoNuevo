@@ -11,6 +11,21 @@
 </head>
 
 <body>
+
+        <script language="javascript">
+                function mostrar()
+                {
+                    var reg_1=document.getElementById("nombre ");
+                    var reg_2=document.getElementById("materia");
+                    var reg_3=document.getElementById("descripcion");
+                
+                    document.write(
+                    "<table cellpadding='5' cellspacing='0' border='1'>" +
+                    "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>"+
+                    "<tr><td>"+reg_1.value+"</td><td>"+reg_2.value+"</td><td>"+reg_3.value+"</td></tr></table>"
+                    );
+                }
+                </script>
     <header>
         <h1 align="center">¡Organiza Tus Trabajos!</h1>
     </header>
@@ -77,7 +92,7 @@
                 </p>
             </table>
             <header>
-                <h4 align="center"> Descripción del Trabajo</h4>
+                <h4 align="center">Descripción del Trabajo</h4>
             </header>
             <table style="margin: 0 auto">
 
@@ -93,8 +108,8 @@
                 <tr>
 
                     <td>
-                        <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar" style="height:35px;width: 125px; background-color: #ff3942 " />
-                        <input type="submit" name="guardar" id="guardar" value="Guardar" style="height:35px;width: 125px;background-color:  #63d151 " />
+                        <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar" style="height:35px;width: 125px; background-color: #ff3942 " onclick="mostrar()" value="mostrar en tabla"/>
+                        <input type="button" onclick="mostrar()" value="mostrar en tabla"/>
                     </td>
 
                 </tr>
