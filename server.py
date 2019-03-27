@@ -34,7 +34,7 @@ def index():
 def print_items(): 
     return render_template('historial.html', Tareas = Tareas.query.all() )
 
-    
+  
 
 db.create_all()
 app.run(debug=True)

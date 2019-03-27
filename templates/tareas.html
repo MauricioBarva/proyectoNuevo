@@ -6,48 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Organiza tus trabajos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="static/estilo.css">
+    
+    
     <script src="main.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/estilo.css">
 </head>
 
 <body>
 
-    <script language="javascript">
-        var array = new Array();
-
-        function lista() {
-            document.write(
-                "<table cellpadding='5' cellspacing='0' border='1'>" +
-                "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
-                "<tr><td>" + nombre.value + "</td><td>" + materia.value + "</td><td>" + descripcion.value + "</td></tr></table>"
-            );
-        }
-
-        function guardar() {
-            var nombre = document.getElementById("nombre");
-            var materia = document.getElementById("materia");
-            var descripcion = document.getElementById("descripcion");
-            array.push(nombre.value);
-
-            array.push(materia.value);
-
-            array.push(descripcion.value);
-            for (var i in array) {
-                console.log(array[i]); // elemento actual
-            }
-
-
-
-
-        }
-    </script>
     <header>
         <h1 align="center" style="padding-top: 30px; padding-bottom: 20px;">¡Organiza Tus Trabajos!</h1>
     </header>
     <nav class="navegacion">
         <ul class="menu">
-            <li><a href="http://127.0.0.1:5000/">Agregar</a></li>
-            <li><a href="http://127.0.0.1:5000/tareas" >Lista de Trabajos</a></li>
+            <li><a href="/">Agregar</a></li>
+            <li><a href="/tareas" >Lista de Trabajos</a></li>
+            <li><a href="#">Contacto</a></li>
+            <li><a href="#" >Ayuda</a></li>
         </ul>
     </nav>
     <hr>
@@ -69,7 +45,7 @@
                         </th>
 
                         <td colspan="2">
-                            <input type="text " id="nombre" name="nombre" placeholder="Ingrese Nombre Trabajo " required />
+                            <input type="text " style="width:220px;text-align: center" id="nombre" name="nombre" placeholder="Ingrese Nombre Trabajo " required />
                         </td>
 
                         <th colspan="2 ">
@@ -77,7 +53,7 @@
                         </th>
 
                         <td>
-                            <input type="text " id="materia" name="materia" placeholder="Ingrese Nombre Materia " required />
+                            <input type="text " style="width:220px;text-align: center" id="materia" name="materia" placeholder="Ingrese Nombre Materia " required />
                         </td>
                     </tr>
 
@@ -124,7 +100,11 @@
                     </td>
                     <td>
                         <br>
-                        <input type="submit" id="guardar" width="30" height="50" value="Guardar"/>
+                    
+                        <button class="btn btn-primary" type="submit" style="width:150px;">
+                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                               Guardar
+                              </button>
                     </td>
                 </tr>
                 <tr>
@@ -137,7 +117,7 @@
     </section>
     <footer>
 
-        <p style="text-align: right; padding-right: 60px; padding-top: 20px; padding-bottom: 20px"><strong>2019</strong></p>
+        <p style="text-align: right; padding-right: 60px; padding-bottom: 20px"><strong>2019</strong></p>
     </footer>
 </body>
 
