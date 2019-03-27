@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 import os
@@ -12,37 +12,24 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
-class Posts(db.Model):
+class Tareas(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(50))
+    nombre_tarea = db.Column(db.String(100), unique = True, nullable = False)
+    nombre_materia = db.Column(db.String(100), nullable = False)
+    fecha_tarea = db.Column(db.String(100), nullable = False)
+    descripcion_tarea = db.Column(db.String(250), nullable = False)
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
+    if request.method == "POST":
+        new_tarea = Tareas(nombre_tarea = request.form["nombre"], nombre_materia = request.form["materia"], fecha_tarea = request.form["fecha"], descripcion_tarea = request.form["descripcion"])
+        db.session.add(new_tarea)
+        db.session.commit()
+
+        return "Se registró"
+
     return render_template('tareas.html')
-
-@app.route('/insert/default')
-def insert_default():
-
-    new_post = Posts(title="Default title")
-    db.session.add(new_post)
-    db.session.commit()
-
-    return "the default was created"
-
-@app.route('/lista/')
-def historial():
-    
-    u1={'id': id, 'nombre': "Mauricio", 'puntos': 100}
-    u2={'id': 31, 'nombre': "Sapo", 'puntos': 900}
-    u3={'id': 8765, 'nombre': "Estiercol", 'puntos': 98765}
-
-    l = []
-
-    l.append(u1)
-    l.append(u2)
-    l.append(u3)
-    return render_template('historial.html', lista = l)
 
 if __name__ == "__main__":
     db.create_all()
