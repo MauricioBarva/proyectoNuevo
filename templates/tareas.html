@@ -6,25 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Organiza tus trabajos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="estilo.css">
     <script src="main.js"></script>
 </head>
 
 <body>
 
     <script language="javascript">
-
         var array = new Array();
-       
+
         function mostrar() {
-            var reg_1 = document.getElementById("nombre");
-            var reg_2 = document.getElementById("materia");
-            var reg_3 = document.getElementById("descripcion");
-            array.push(reg_1.value);
+            var nombre = document.getElementById("nombre");
+            var materia = document.getElementById("materia");
+            var descripcion = document.getElementById("descripcion");
+            array.push(nombre.value);
 
-            array.push(reg_2.value);
+            array.push(materia.value);
 
-            array.push(reg_3.value);
+            array.push(descripcion.value);
             for (var i in array) {
                 console.log(array[i]); // elemento actual
             }
@@ -38,10 +37,10 @@
         }
     </script>
     <header>
-        <h1 align="center">¡Organiza Tus Trabajos!</h1>
+        <h1 align="center" style="padding-top: 30px; padding-bottom: 20px;">¡Organiza Tus Trabajos!</h1>
     </header>
-    <nav>
-        <ul>
+    <nav class="navegacion">
+        <ul class="menu">
             <li><a href="http://127.0.0.1:5000/">Agregar Trabajo</a></li>
             <li><a href="http://127.0.0.1:5000/lista">Todos los Trabajos</a></li>
         </ul>
@@ -50,7 +49,6 @@
 
     <br />
     <section>
- ola
         <h4 id="obligatorio" style="color: red;text-align: center">(*) Obligatorio</h4>
         <br />
         <form action="" method="post">
@@ -67,8 +65,7 @@
                         </th>
 
                         <td colspan="2">
-                            <input type="text " id="nombre" name="nombre" placeholder="Ingrese Nombre Trabajo "
-                                required />
+                            <input type="text " id="nombre" name="nombre" placeholder="Ingrese Nombre Trabajo " required />
                         </td>
 
                         <th colspan="2 ">
@@ -76,8 +73,7 @@
                         </th>
 
                         <td>
-                            <input type="text " id="materia" name="materia" placeholder="Ingrese Nombre Materia "
-                                required />
+                            <input type="text " id="materia" name="materia" placeholder="Ingrese Nombre Materia " required />
                         </td>
                     </tr>
 
@@ -85,22 +81,22 @@
                         <th colspan="2 ">
 
 
-                        <td>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                        </td>
+                            <td>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </td>
 
-                        <th colspan="2 ">
-                            <label for="fecha ">Fecha Entrega <span style="color:red">*</span></label>
-                        </th>
+                            <th colspan="2 ">
+                                <label for="fecha ">Fecha Entrega <span style="color:red">*</span></label>
+                            </th>
 
-                        <td>
-                            <input type="date" name="fecha" id="fecha" value="" required>
-                        </td>
+                            <td>
+                                <input type="date" name="fecha" id="fecha" value="" required>
+                            </td>
                     </tr>
                 </p>
             </table>
@@ -111,8 +107,7 @@
 
                 <tr>
                     <td>
-                        <textarea name="descripcion" id="descripcion" rows="7" cols="50"
-                            placeholder="-- Escribe la descripción --"></textarea>
+                        <textarea name="descripcion" id="descripcion" rows="7" cols="50" placeholder="-- Escribe la descripción --"></textarea>
                     </td>
                 </tr>
             </table>
@@ -122,8 +117,7 @@
                 <tr>
 
                     <td>
-                        <input type="button" onclick="guardar()" value="save" />
-                        <input type="button" onclick="mostrar()" value="mostrar en tabla" />
+                        <input type="button" width="30" height="50" onclick="mostrar()" value="Guardar" />
                     </td>
                     <td>
                         <pre id="whereToPrint"></pre>
