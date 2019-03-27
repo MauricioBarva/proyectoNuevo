@@ -13,16 +13,28 @@
 <body>
 
     <script language="javascript">
+
+        var array = new Array();
+       
         function mostrar() {
             var reg_1 = document.getElementById("nombre");
             var reg_2 = document.getElementById("materia");
             var reg_3 = document.getElementById("descripcion");
+            array.push(reg_1.value);
 
-            document.write(
+            array.push(reg_2.value);
+
+            array.push(reg_3.value);
+            for (var i in array) {
+                console.log(array[i]); // elemento actual
+            }
+
+
+            /*console.log(
                 "<table cellpadding='5' cellspacing='0' border='1'>" +
                 "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
                 "<tr><td>" + reg_1.value + "</td><td>" + reg_2.value + "</td><td>" + reg_3.value + "</td></tr></table>"
-            );
+            );*/
         }
     </script>
     <header>
@@ -110,10 +122,11 @@
                 <tr>
 
                     <td>
-                        <input type="reset" name="reiniciar" id="reiniciar" value="Reiniciar"
-                            style="height:35px;width: 125px; background-color: #ff3942 " onclick="mostrar()"
-                            value="mostrar en tabla" />
+                        <input type="button" onclick="guardar()" value="save" />
                         <input type="button" onclick="mostrar()" value="mostrar en tabla" />
+                    </td>
+                    <td>
+                        <pre id="whereToPrint"></pre>
                     </td>
 
                 </tr>
