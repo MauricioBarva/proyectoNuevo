@@ -15,7 +15,15 @@
     <script language="javascript">
         var array = new Array();
 
-        function mostrar() {
+        function lista() {
+            document.write(
+                "<table cellpadding='5' cellspacing='0' border='1'>" +
+                "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
+                "<tr><td>" + nombre.value + "</td><td>" + materia.value + "</td><td>" + descripcion.value + "</td></tr></table>"
+            );
+        }
+
+        function guardar() {
             var nombre = document.getElementById("nombre");
             var materia = document.getElementById("materia");
             var descripcion = document.getElementById("descripcion");
@@ -29,11 +37,8 @@
             }
 
 
-            document.write(
-                "<table cellpadding='5' cellspacing='0' border='1'>" +
-                "<tr><td>Registro 1</td><td>Registro 2</td><td>Registro 3</td></tr>" +
-                "<tr><td>" + nombre.value + "</td><td>" + materia.value + "</td><td>" + descripcion.value + "</td></tr></table>"
-            );
+
+
         }
     </script>
     <header>
@@ -42,7 +47,7 @@
     <nav class="navegacion">
         <ul class="menu">
             <li><a href="http://127.0.0.1:5000/">Agregar</a></li>
-            <li><a href="http://127.0.0.1:5000/lista">Lista de Trabajos</a></li>
+            <li><a href="http://127.0.0.1:5000/lista" onclick="lista()">Lista de Trabajos</a></li>
         </ul>
     </nav>
     <hr>
@@ -120,7 +125,7 @@
                     </td>
                     <td>
                         <br>
-                        <input type="button" id="guardar" onclick="mostrar()" value="Guardar" />
+                        <input type="button" id="guardar" onclick="guardar()" value="Guardar" />
                     </td>
 
                 </tr>
