@@ -25,11 +25,19 @@
         }
     </script>
     <form>
-        Registro 1
-        <input type="text" id="reg_1" /><br /><br /> Registro 2
-        <input type="text" id="reg_2" /><br /><br /> Registro 3
-        <input type="text" id="reg_3" /><br><br />
-        <input type="button" onclick="mostrar()" value="mostrar en tabla" />
+        document.write( "
+        <table cellpadding='5' cellspacing='0' border='1'>" + "
+            <tr>
+                <td>Registro 1</td>
+                <td>Registro 2</td>
+                <td>Registro 3</td>
+            </tr>" + "
+            <tr>
+                <td>" + nombre.value + "</td>
+                <td>" + materia.value + "</td>
+                <td>" + descripcion.value + "</td>
+            </tr>
+        </table>" );
     </form>
 </body>
 
