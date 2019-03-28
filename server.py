@@ -28,7 +28,8 @@ def index():
             new_tarea = Tareas(nombre_tarea = request.form["nombre"], nombre_materia = request.form["materia"], fecha_tarea = request.form["fecha"], descripcion_tarea = request.form["descripcion"])
             db.session.add(new_tarea)
             db.session.commit()
-        except Exception e:
+        except Exception as e:
+            
             return app.logger.error("El error fue: "+ str(e))
 
     return render_template('tareas.html')
