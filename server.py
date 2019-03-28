@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import logging
 
 import os
 
@@ -23,17 +24,18 @@ class Tareas(db.Model):
 @app.route('/', methods=["GET", "POST"])
 def index():
     if request.method == "POST":
-        new_tarea = Tareas(nombre_tarea = request.form["nombre"], nombre_materia = request.form["materia"], fecha_tarea = request.form["fecha"], descripcion_tarea = request.form["descripcion"])
-        db.session.add(new_tarea)
-        db.session.commit()
+        try:
+            new_tarea = Tareas(nombre_tarea = request.form["nombre"], nombre_materia = request.form["materia"], fecha_tarea = request.form["fecha"], descripcion_tarea = request.form["descripcion"])
+            db.session.add(new_tarea)
+            db.session.commit()
+        except Exception e:
+            return app.logger.error("El error fue: "+ str(e))
 
     return render_template('tareas.html')
 
 @app.route('/tareas')
-def print_items(): 
-    return render_template('historial.html', Tareas = Tareas.query.all() )
-
-  
+def tareas(): 
+    return render_template('historial.html', Tareas = Tareas.query.all())
 
 db.create_all()
 app.run(debug=True)
